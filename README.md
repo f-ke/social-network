@@ -1,6 +1,6 @@
 # Social network
 This is a simple social network for users to share life and explore interesting topic
-##content
+## content
 ### login page
 ![avatar](src/main/resources/public/sn/login.PNG)
 ### register page
@@ -14,7 +14,7 @@ This is a simple social network for users to share life and explore interesting 
 ### set your setting
 ![avatar](src/main/resources/public/sn/setting.PNG)
 
-##Tools & Devleopment environment
+## Tools & Devleopment environment
 - Jdk 1.11
 - Maven 3.2
 - Spring Boot 2.0
