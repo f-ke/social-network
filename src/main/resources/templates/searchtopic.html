@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/asserts/css/bootstrap.min.css}" href="asserts/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/chunk.css}" href="asserts/css/chunk.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/home.css}" href="asserts/css/home.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/nav.css}" href="asserts/css/nav.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/postcomment.css}" href="asserts/css/postcomment.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="common/bar::#topbar"></div>
+
+<input type="hidden" name = "id" th:if="${user != null}" th:value="${user.id}"/>
+
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="common/bar::#sidebar(activeUri = 'main.html')"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="sc-gqPbQI hcaOkx">
+                <div class="sc-hORach fWPNnD"><a class="sc-gqjmRU sc-bAeIUo eMLKyN" href="/fanfan">
+                    <div class="sc-jAaTju kZLkxs">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 53 53">
+                            <path d="M18.613 41.552l-7.907 4.313a7.106 7.106 0 0 0-1.269.903A26.377 26.377 0 0 0 26.5 53c6.454 0 12.367-2.31 16.964-6.144a7.015 7.015 0 0 0-1.394-.934l-8.467-4.233a3.229 3.229 0 0 1-1.785-2.888v-3.322c.238-.271.51-.619.801-1.03a19.482 19.482 0 0 0 2.632-5.304c1.086-.335 1.886-1.338 1.886-2.53v-3.546c0-.78-.347-1.477-.886-1.965v-5.126s1.053-7.977-9.75-7.977-9.75 7.977-9.75 7.977v5.126a2.644 2.644 0 0 0-.886 1.965v3.546c0 .934.491 1.756 1.226 2.231.886 3.857 3.206 6.633 3.206 6.633v3.24a3.232 3.232 0 0 1-1.684 2.833z" fill="#e7eced"></path><path d="M26.953.004C12.32-.246.254 11.414.004 26.047-.138 34.344 3.56 41.801 9.448 46.76a7.041 7.041 0 0 1 1.257-.894l7.907-4.313a3.23 3.23 0 0 0 1.683-2.835v-3.24s-2.321-2.776-3.206-6.633a2.66 2.66 0 0 1-1.226-2.231v-3.546c0-.78.347-1.477.886-1.965v-5.126S15.696 8 26.499 8s9.75 7.977 9.75 7.977v5.126c.54.488.886 1.185.886 1.965v3.546c0 1.192-.8 2.195-1.886 2.53a19.482 19.482 0 0 1-2.632 5.304c-.291.411-.563.759-.801 1.03V38.8c0 1.223.691 2.342 1.785 2.888l8.467 4.233a7.05 7.05 0 0 1 1.39.932c5.71-4.762 9.399-11.882 9.536-19.9C53.246 12.32 41.587.254 26.953.004z" fill="#757575"></path></svg></div><div class="sc-htpNat iwFbTK"><span class="sc-iujRgT eHHHfk">fanfan</span><div class="sc-bMVAic ddJtUJ">4 mins</div></div></a><button class="sc-ifAKCX kLZvwM"><svg width="17" fill="rgba(0, 0, 0, 0.87)" viewBox="0 0 612 612" xmlns="http://www.w3.org/2000/svg"><circle cx="69.545" cy="306" r="69.545"></circle>
+                    <circle cx="306" cy="306" r="69.545"></circle>
+                    <circle cx="542.455" cy="306" r="69.545"></circle>
+                </svg>
+                </button>
+                </div>
+                <!--                comment-->
+                <div class="sc-htpNat lkhPZx">
+                    <h3 class="sc-jzJRlG fkPtct">ddd</h3></div>
+                <img src="https://res.cloudinary.com/drwkapa8p/image/upload/v1582075940/post/d28ab7cd-6667-49e2-8034-d752b9bad4bd.jpg" class="sc-GMQeP iPeGfi">
+                <div class="sc-exAgwC jmuqjS">
+                    <div class="sc-cQFLBn jxrYuA">
+                        <div class="sc-gojNiO eMSlLc">0 likes<div class="sc-htpNat bTmafA">
+
+                        </div><button class="sc-ifAKCX sc-lkqHmb hdufcJ">2 comments</button>
+                        </div>
+                        <div class="sc-daURTG jaRRQW">
+                            <button class="sc-ifAKCX sc-RefOD hrApck">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="rgba(0, 0, 0, 0.54)" viewBox="0 0 511.999 511.999">
+                                    <path d="M83.578 167.256H16.716C7.524 167.256 0 174.742 0 183.971v300.881c0 9.225 7.491 16.713 16.716 16.713h66.862c9.225 0 16.716-7.489 16.716-16.713V183.971c0-9.229-7.525-16.715-16.716-16.715zM470.266 167.256c-2.692-.456-128.739 0-128.739 0l17.606-48.032c12.148-33.174 4.283-83.827-29.424-101.835-10.975-5.864-26.309-8.809-38.672-5.697-7.09 1.784-13.321 6.478-17.035 12.767-4.271 7.233-3.83 15.676-5.351 23.696-3.857 20.342-13.469 39.683-28.354 54.2-25.952 25.311-106.571 98.331-106.571 98.331v267.45h278.593c37.592.022 62.228-41.958 43.687-74.749 22.101-14.155 29.66-43.97 16.716-66.862 22.102-14.155 29.66-43.97 16.716-66.862 38.134-24.423 25.385-84.871-19.172-92.407z"></path></svg><div class="sc-htpNat bNGYSx"></div>
+                                <b>Like</b>
+                            </button>
+                            <button class="sc-ifAKCX hjAPgA">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58" width="18"><path d="M29 1.5c-16.016 0-29 11.641-29 26 0 5.292 1.768 10.211 4.796 14.318C4.398 46.563 3.254 53.246 0 56.5c0 0 9.943-1.395 16.677-5.462l.022.009c2.764-1.801 5.532-3.656 6.105-4.126.3-.421.879-.548 1.33-.277.296.178.483.503.489.848.01.622-.005.784-5.585 4.421A31.914 31.914 0 0 0 29 53.5c16.016 0 29-11.641 29-26s-12.984-26-29-26z" fill="rgba(0, 0, 0, 0.54)"></path></svg> <div class="sc-htpNat bNGYSx"></div> <b>Comment</b></button></div></div><div class="sc-htpNat fbyJIU"><div class="sc-eLExRp fFlsNQ"></div><form class="sc-gxMtzJ gQSFUv">
+                    <textarea placeholder="Add a comment..." class="sc-bZQynM eKXLzY"></textarea>
+                    <!--                    post comment button-->
+                    <button type="submit" color="grey[500]" class="sc-ifAKCX ldFJSF" disabled="">Post</button>
+                </form>
+                </div>
+                    <div class="sc-eLExRp fFlsNQ"></div>
+                    <div class="sc-bXGyLb eeKnRV"><div class="sc-kfGgVZ hcILRE">
+                        <a class="sc-gqjmRU jjDpdZ" href="/fanfan"><div class="sc-jAaTju kZLkxs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 53 53">
+                                <path d="M18.613 41.552l-7.907 4.313a7.106 7.106 0 0 0-1.269.903A26.377 26.377 0 0 0 26.5 53c6.454 0 12.367-2.31 16.964-6.144a7.015 7.015 0 0 0-1.394-.934l-8.467-4.233a3.229 3.229 0 0 1-1.785-2.888v-3.322c.238-.271.51-.619.801-1.03a19.482 19.482 0 0 0 2.632-5.304c1.086-.335 1.886-1.338 1.886-2.53v-3.546c0-.78-.347-1.477-.886-1.965v-5.126s1.053-7.977-9.75-7.977-9.75 7.977-9.75 7.977v5.126a2.644 2.644 0 0 0-.886 1.965v3.546c0 .934.491 1.756 1.226 2.231.886 3.857 3.206 6.633 3.206 6.633v3.24a3.232 3.232 0 0 1-1.684 2.833z" fill="#e7eced"></path>
+                                <path d="M26.953.004C12.32-.246.254 11.414.004 26.047-.138 34.344 3.56 41.801 9.448 46.76a7.041 7.041 0 0 1 1.257-.894l7.907-4.313a3.23 3.23 0 0 0 1.683-2.835v-3.24s-2.321-2.776-3.206-6.633a2.66 2.66 0 0 1-1.226-2.231v-3.546c0-.78.347-1.477.886-1.965v-5.126S15.696 8 26.499 8s9.75 7.977 9.75 7.977v5.126c.54.488.886 1.185.886 1.965v3.546c0 1.192-.8 2.195-1.886 2.53a19.482 19.482 0 0 1-2.632 5.304c-.291.411-.563.759-.801 1.03V38.8c0 1.223.691 2.342 1.785 2.888l8.467 4.233a7.05 7.05 0 0 1 1.39.932c5.71-4.762 9.399-11.882 9.536-19.9C53.246 12.32 41.587.254 26.953.004z" fill="#757575">
+
+                                </path>
+                            </svg>
+                        </div>
+                        </a>
+                        <div class="sc-kIPQKe cQhNcD"><button class="sc-kPVwWT grijEi">
+                            <svg width="10" fill="rgba(0, 0, 0, 0.54)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971">
+                                <path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z">
+
+                                </path>
+                            </svg>
+                        </button>
+                            <div class="sc-htpNat BsZnH"></div>
+                            <div class="sc-htpNat eZMjmI"><a class="sc-gqjmRU jjDpdZ" href="/fanfan">
+                                <div class="sc-esjQYD cUSCEe">fanfan</div></a>
+                            </div>rrrr</div>
+                    </div>
+                        <div class="sc-kfGgVZ hcILRE">
+                            <a class="sc-gqjmRU jjDpdZ" href="/fanfan">
+                                <div class="sc-jAaTju kZLkxs"><svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 53 53">
+                                    <path d="M18.613 41.552l-7.907 4.313a7.106 7.106 0 0 0-1.269.903A26.377 26.377 0 0 0 26.5 53c6.454 0 12.367-2.31 16.964-6.144a7.015 7.015 0 0 0-1.394-.934l-8.467-4.233a3.229 3.229 0 0 1-1.785-2.888v-3.322c.238-.271.51-.619.801-1.03a19.482 19.482 0 0 0 2.632-5.304c1.086-.335 1.886-1.338 1.886-2.53v-3.546c0-.78-.347-1.477-.886-1.965v-5.126s1.053-7.977-9.75-7.977-9.75 7.977-9.75 7.977v5.126a2.644 2.644 0 0 0-.886 1.965v3.546c0 .934.491 1.756 1.226 2.231.886 3.857 3.206 6.633 3.206 6.633v3.24a3.232 3.232 0 0 1-1.684 2.833z" fill="#e7eced"></path>
+                                    <path d="M26.953.004C12.32-.246.254 11.414.004 26.047-.138 34.344 3.56 41.801 9.448 46.76a7.041 7.041 0 0 1 1.257-.894l7.907-4.313a3.23 3.23 0 0 0 1.683-2.835v-3.24s-2.321-2.776-3.206-6.633a2.66 2.66 0 0 1-1.226-2.231v-3.546c0-.78.347-1.477.886-1.965v-5.126S15.696 8 26.499 8s9.75 7.977 9.75 7.977v5.126c.54.488.886 1.185.886 1.965v3.546c0 1.192-.8 2.195-1.886 2.53a19.482 19.482 0 0 1-2.632 5.304c-.291.411-.563.759-.801 1.03V38.8c0 1.223.691 2.342 1.785 2.888l8.467 4.233a7.05 7.05 0 0 1 1.39.932c5.71-4.762 9.399-11.882 9.536-19.9C53.246 12.32 41.587.254 26.953.004z" fill="#757575"></path>
+                                </svg>
+                                </div>
+                            </a>
+                            <div class="sc-kIPQKe cQhNcD">
+                                <button class="sc-kPVwWT grijEi">
+                                    <svg width="10" fill="rgba(0, 0, 0, 0.54)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971">
+                                        <path d="M28.228 23.986L47.092 5.122a2.998 2.998 0 0 0 0-4.242 2.998 2.998 0 0 0-4.242 0L23.986 19.744 5.121.88a2.998 2.998 0 0 0-4.242 0 2.998 2.998 0 0 0 0 4.242l18.865 18.864L.879 42.85a2.998 2.998 0 1 0 4.242 4.241l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879a2.998 2.998 0 0 0 0-4.242L28.228 23.986z"></path></svg></button><div class="sc-htpNat BsZnH"></div><div class="sc-htpNat eZMjmI"><a class="sc-gqjmRU jjDpdZ" href="/fanfan">
+                                <div class="sc-esjQYD cUSCEe">fanfan</div>
+                            </a>
+                            </div>dd</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>

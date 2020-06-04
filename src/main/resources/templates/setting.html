@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>setting</title>
+    <link th:href="@{/asserts/css/bootstrap.min.css}" href="asserts/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/nav.css}" href="asserts/css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="common/bar::#topbar"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div th:replace="common/bar::#sidebar(activeUri = 'mysetting')"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <form th:action="@{/editsetting}" method="post">
+                <!--发送put请求修改员工数据-->
+                <!--1.springmvc 配置hiddenhttpmethodfilter	-->
+                <!--2.创建post表单-->
+                <!--3.创建input，name=_method, 值就是我们请求的方式		-->
+                <input type="hidden" name = "_method" value="put" th:if="${ user != null}"/>
+                <input type="hidden" name = "id" th:if="${user != null}" th:value="${user.id}"/>
+                <div class="form-group col-md-3">
+                    <label style="display: none">Name</label>
+                    <input name = "userName" style = "display: none" type="text" class="form-control" th:placeholder="${user.userName}" th:value="${user!=null}?${user.userName}">
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Password</label>
+                    <input name = "passWord" type="password" class="form-control" th:value="${user!=null}?${user.passWord}">
+                </div>
+                <div class="form-group  col-md-3">
+                    <label>Vocation</label>
+                    <input name="vocation" type="text" class="form-control"th:placeholder="${user.vocation}" placeholder="student" th:value="${user.vocation!=null}?${user.vocation}">
+                </div>
+                <div class="form-group  col-md-3">
+                    <label>Email</label>
+                    <input name="email" type="email" th:placeholder="${user.email}"class="form-control" placeholder="zhangsan@atguigu.com" th:value="${user.email!=null}?${user.email}">
+                </div>
+                <div class="form-group  col-md-3" style="display: none">
+                    <label>Religion</label>
+                    <input name="religion" type="text" class="form-control" placeholder="none" th:placeholder="${user.religion}" th:value="${user.religion!=null}?${user.religion}">
+                </div>
+
+                <div class="form-group" style = "margin-left:13px">
+                    <label>Gender</label><br/>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="1" th:checked="${user.gender!=null}?${user.gender == 1}">
+                        <label class="form-check-label">male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" value="0" th:checked="${user.gender!=null}?${user.gender == 0}">
+                        <label class="form-check-label">female</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3"style = "margin-left:13px">
+                        <label for="year">Year</label>
+                        <input type="text" class="form-control" id="year" name="birthyear" th:placeholder="${user.birthyear}"th:value="${user.birthyear!=null}?${user.birthyear}">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="month">Month</label>
+                        <input type="text" class="form-control" id="month" name="birthmonth"  th:placeholder="${user.birthmonth}" th:value="${user.birthmonth!=null}?${user.birthmonth}">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="day">Day</label>
+                        <input type="text" class="form-control" id="day" name="birthday" th:placeholder="${user.birthday}" th:value="${user.birthday!=null}?${user.birthday}">
+                    </div>
+                </div>
+
+                <!--                <div class="form-group">-->
+                <!--                    <label>department</label>-->
+                <!--                    <select class="form-control" name="department.id">-->
+                <!--                        <option th:value="${dept.id}" th:each="dept:${depts}" th:text="${dept.departmentName}" th:selected="${user!=null}?${dept.id == user.department.id}">1</option>-->
+                <!--                    </select>-->
+                <!--                </div>-->
+                <!--                <div class="form-group">-->
+                <!--                    <label>Birth</label>-->
+                <!--                    <input name="birth" type="text" class="form-control" placeholder="zhangsan" th:value="${user!=null}?${user.birth}">-->
+                <!--                </div>-->
+                <button type="submit" class="btn btn‐primary" th:text="${user!=null}?'Save':'add'" style="margin-left:35%; color: #005cbf"></button>
+            </form>
+
+        </main>
+    </div>
+</div>
+</body>
+</html>

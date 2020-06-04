@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Signin Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/asserts/css/bootstrap.min.css}" href="asserts/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/asserts/css/signin.css}" rel="stylesheet">
+    <style>
+        body{
+            background: linear-gradient(#0c5460,#3f51b5);
+        }
+        input{
+            background:#1c7430 !important;
+            /*border:none !important;*/
+            /*border-bottom: 1px solid black !important;*/
+        }
+    </style>
+</head>
+
+<body class="text-center">
+<form class="form-signin" th:action="@{/user/register}" method="post">
+    <img class="mb-4" th:src="@{/asserts/img/our.svg}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip2}">Please sign in</h1>
+    <p style="color: #ff2a39" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <label class="sr-only" th:text="#{login.username}">Username</label>
+    <input type="text"  name = "username" class="form-control" th:placeholder="#{login.username}" required="" autofocus="">
+    <label class="sr-only" th:text="#{login.password}">Password</label>
+    <input type="password" name ="password" class="form-control" th:placeholder="#{login.password}" required="">
+    <input type="password" name ="password2" class="form-control" th:placeholder="#{login.password2}" required="">
+    <div class="checkbox mb-3">
+        <label>
+
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.regis}" style="background:grey">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">© 2020-2021</p>
+    <a class="btn btn-sm" th:href="@{/toregister(l='zh_CN')}">中文</a>
+    <a class="btn btn-sm"  th:href="@{/toregister(l='en_US')}">English</a>
+
+</form>
+
+</body>
+
+<script>
+
+</script>
+
+</html>

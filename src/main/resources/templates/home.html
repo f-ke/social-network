@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/asserts/css/bootstrap.min.css}" href="asserts/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/chunk.css}" href="asserts/css/chunk.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/home.css}" href="asserts/css/home.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/nav.css}" href="asserts/css/nav.css" rel="stylesheet">
+    <link th:href="@{/asserts/css/postcomment.css}" href="asserts/css/postcomment.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <style id="tsbrowser_video_independent_player_style" type="text/css">
+        [tsbrowser_force_max_size] {
+            width: 100% !important;
+            height: 100% !important;
+            left: 0px !important;
+            top: 0px !important;
+            margin: 0px !important;
+            padding: 0px !important;
+            transform: none !important;
+        }
+        [tsbrowser_force_fixed] {
+            position: fixed !important;
+            z-index: 9999 !important;
+            background: black !important;
+        }
+        [tsbrowser_force_hidden] {
+            opacity: 0 !important;
+            z-index: 0 !important;
+        }
+        [tsbrowser_hide_scrollbar] {
+            overflow: hidden !important;
+        }
+        [tsbrowser_display_none] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
+        [tsbrowser_force_show] {
+            display: black !important;
+            visibility: visible !important;
+            opacity: 0;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<div th:replace="common/bar::#topbar"></div>
+
+<input type="hidden" name = "id" th:if="${user != null}" th:value="${user.id}"/>
+
+<div class="container-fluid">
+    <div class="row">
+<div th:replace="common/bar::#sidebar(activeUri = 'main.html')"></div>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <div class="sc-bdVaJa Ndkwj">
+            <div class="sc-htpNat dLvFeZ">
+
+        </div>
+            <div  class="sc-bdVaJa sc-fOKMvo dQQxKX" color="white" radius="sm">
+                <form enctype="multipart/form-data" method="post" th:action="@{/uploadFile}">
+                    <input style="display: none" name = "userid" th:if="${user != null}" th:value="${user.id}"/>
+                    <div class="sc-dUjcNx begbpc">
+                        <div class="sc-jAaTju eNQpkr" size="40">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53" width="40px"><path fill="#e7eced" d="M 18.613 41.552 l -7.907 4.313 a 7.106 7.106 0 0 0 -1.269 0.903 A 26.377 26.377 0 0 0 26.5 53 c 6.454 0 12.367 -2.31 16.964 -6.144 a 7.015 7.015 0 0 0 -1.394 -0.934 l -8.467 -4.233 a 3.229 3.229 0 0 1 -1.785 -2.888 v -3.322 c 0.238 -0.271 0.51 -0.619 0.801 -1.03 a 19.482 19.482 0 0 0 2.632 -5.304 c 1.086 -0.335 1.886 -1.338 1.886 -2.53 v -3.546 c 0 -0.78 -0.347 -1.477 -0.886 -1.965 v -5.126 s 1.053 -7.977 -9.75 -7.977 s -9.75 7.977 -9.75 7.977 v 5.126 a 2.644 2.644 0 0 0 -0.886 1.965 v 3.546 c 0 0.934 0.491 1.756 1.226 2.231 c 0.886 3.857 3.206 6.633 3.206 6.633 v 3.24 a 3.232 3.232 0 0 1 -1.684 2.833 Z" /><path fill="#757575" d="M 26.953 0.004 C 12.32 -0.246 0.254 11.414 0.004 26.047 C -0.138 34.344 3.56 41.801 9.448 46.76 a 7.041 7.041 0 0 1 1.257 -0.894 l 7.907 -4.313 a 3.23 3.23 0 0 0 1.683 -2.835 v -3.24 s -2.321 -2.776 -3.206 -6.633 a 2.66 2.66 0 0 1 -1.226 -2.231 v -3.546 c 0 -0.78 0.347 -1.477 0.886 -1.965 v -5.126 S 15.696 8 26.499 8 s 9.75 7.977 9.75 7.977 v 5.126 c 0.54 0.488 0.886 1.185 0.886 1.965 v 3.546 c 0 1.192 -0.8 2.195 -1.886 2.53 a 19.482 19.482 0 0 1 -2.632 5.304 c -0.291 0.411 -0.563 0.759 -0.801 1.03 V 38.8 c 0 1.223 0.691 2.342 1.785 2.888 l 8.467 4.233 a 7.05 7.05 0 0 1 1.39 0.932 c 5.71 -4.762 9.399 -11.882 9.536 -19.9 C 53.246 12.32 41.587 0.254 26.953 0.004 Z" />
+                            </svg>
+                        </div>
+                        <textarea name="content" class="sc-gHboQg eqKheY" placeholder="Add a post" type="textarea"  ></textarea>
+                    </div>
+                    <div class="sc-emmjRN boEqap">
+                        <input name="fileName" class="sc-krvtoX iBOgSY" id="post-image" type="file" accept="image/x-png,image/jpeg">
+                        <label class="sc-fYiAbW jkDIhX" for="post-image">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20">
+                    <path fill="rgba(0, 0, 0, 0.54)" d="M 50 40 c -8.285 0 -15 6.718 -15 15 c 0 8.285 6.715 15 15 15 c 8.283 0 15 -6.715 15 -15 c 0 -8.282 -6.717 -15 -15 -15 Z m 40 -15 H 78 c -1.65 0 -3.428 -1.28 -3.949 -2.846 l -3.102 -9.309 C 70.426 11.28 68.65 10 67 10 H 33 c -1.65 0 -3.428 1.28 -3.949 2.846 l -3.102 9.309 C 25.426 23.72 23.65 25 22 25 H 10 C 4.5 25 0 29.5 0 35 v 45 c 0 5.5 4.5 10 10 10 h 80 c 5.5 0 10 -4.5 10 -10 V 35 c 0 -5.5 -4.5 -10 -10 -10 Z M 50 80 c -13.807 0 -25 -11.193 -25 -25 c 0 -13.806 11.193 -25 25 -25 c 13.805 0 25 11.194 25 25 c 0 13.807 -11.195 25 -25 25 Z m 36.5 -38.007 a 3.5 3.5 0 1 1 0 -7 a 3.5 3.5 0 0 1 0 7 Z" />
+                </svg>
+                    <div class="sc-htpNat iwFbTK">Photo</div>
+                </label>
+                        <div class="sc-cpmLhU iCYcLl">
+                            <button class="sc-ifAKCX cLNZRm" type="submit" style="cursor:pointer">share</button>
+
+                            <select  class="sc-ifAKCX lmRuQB"  style="cursor: context-menu" name ="topicid">
+                                <option th:value="${5}" th:text="others"></option>
+                                <option th:value="${mytopic.id}" th:each="mytopic:${mytopics}"><a th:text="${mytopic.topictext} "></a></option>
+                            </select>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+<!--this is topic comment-->
+            <div th:each="Shipin:${Shipins}"class="sc-gqPbQI hcaOkx">
+                <div class="sc-hORach fWPNnD">
+                    <a class="sc-gqjmRU sc-bAeIUo eMLKyN" th:href="@{/viewtopic/}+${user.id}+@{/}+${Shipin.topicid}">
+                    <div class="sc-jAaTju kZLkxs">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 53 53">
+                            <path d="M18.613 41.552l-7.907 4.313a7.106 7.106 0 0 0-1.269.903A26.377 26.377 0 0 0 26.5 53c6.454 0 12.367-2.31 16.964-6.144a7.015 7.015 0 0 0-1.394-.934l-8.467-4.233a3.229 3.229 0 0 1-1.785-2.888v-3.322c.238-.271.51-.619.801-1.03a19.482 19.482 0 0 0 2.632-5.304c1.086-.335 1.886-1.338 1.886-2.53v-3.546c0-.78-.347-1.477-.886-1.965v-5.126s1.053-7.977-9.75-7.977-9.75 7.977-9.75 7.977v5.126a2.644 2.644 0 0 0-.886 1.965v3.546c0 .934.491 1.756 1.226 2.231.886 3.857 3.206 6.633 3.206 6.633v3.24a3.232 3.232 0 0 1-1.684 2.833z" fill="#e7eced"></path><path d="M26.953.004C12.32-.246.254 11.414.004 26.047-.138 34.344 3.56 41.801 9.448 46.76a7.041 7.041 0 0 1 1.257-.894l7.907-4.313a3.23 3.23 0 0 0 1.683-2.835v-3.24s-2.321-2.776-3.206-6.633a2.66 2.66 0 0 1-1.226-2.231v-3.546c0-.78.347-1.477.886-1.965v-5.126S15.696 8 26.499 8s9.75 7.977 9.75 7.977v5.126c.54.488.886 1.185.886 1.965v3.546c0 1.192-.8 2.195-1.886 2.53a19.482 19.482 0 0 1-2.632 5.304c-.291.411-.563.759-.801 1.03V38.8c0 1.223.691 2.342 1.785 2.888l8.467 4.233a7.05 7.05 0 0 1 1.39.932c5.71-4.762 9.399-11.882 9.536-19.9C53.246 12.32 41.587.254 26.953.004z" fill="#757575"></path></svg></div>
+                        <div class="sc-htpNat iwFbTK"><span class="sc-iujRgT eHHHfk" th:text="${Shipin.username}">fanfan</span>
+                            <div class="sc-bMVAic ddJtUJ" th:text="${Shipin.topictext}"></div>
+
+                </div>
+                </a>
+                    <a type="button" class="sc-ifAKCX kLZvwM" style="color:grey" th:href="@{/view/}+${user.id}+@{/}+${Shipin.id}">
+                    <div class="" style="margin-right:10px"><span class="sc-iujRgT eHHHfk">viewdetails</span>
+                        <div class="sc-bMVAic ddJtUJ"></div>
+
+                    </div>
+
+
+                </a>
+
+                </div>
+<!--                comment-->
+                <div  class="sc-htpNat lkhPZx">
+                    <h3 class="sc-jzJRlG fkPtct" th:text="${Shipin.content}">ddd</h3></div>
+                <img th:src="${Shipin.url}" class="sc-GMQeP iPeGfi">
+                <div class="sc-exAgwC jmuqjS">
+                    <div class="sc-cQFLBn jxrYuA">
+                        <div class="sc-gojNiO eMSlLc"><div class="sc-htpNat bTmafA">
+
+                        </div><button class="sc-ifAKCX sc-lkqHmb hdufcJ"></button>
+                        </div>
+                        <div class="sc-daURTG jaRRQW">
+                            <button class="sc-ifAKCX sc-RefOD hrApck">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="18" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"  stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78l1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></g></svg><div class="sc-htpNat bNGYSx"></div>
+                                <b>
+                                    <span th:text="${Shipin.likenums}">
+                                    </span> Like</b>
+                            </button>
+                            <button class="sc-ifAKCX hjAPgA">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58" width="18"><path d="M29 1.5c-16.016 0-29 11.641-29 26 0 5.292 1.768 10.211 4.796 14.318C4.398 46.563 3.254 53.246 0 56.5c0 0 9.943-1.395 16.677-5.462l.022.009c2.764-1.801 5.532-3.656 6.105-4.126.3-.421.879-.548 1.33-.277.296.178.483.503.489.848.01.622-.005.784-5.585 4.421A31.914 31.914 0 0 0 29 53.5c16.016 0 29-11.641 29-26s-12.984-26-29-26z" fill="rgba(0, 0, 0, 0.54)"></path></svg> <div class="sc-htpNat bNGYSx"></div> <b><span th:text="${Shipin.commentnums}"></span> Comment</b>
+                            </button></div></div>
+
+
+                </div>
+
+
+
+
+            </div>
+            </div>
+        </div>
+        </main>>
+        </div>
+</div>
+</body>
+</html>
